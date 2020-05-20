@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1c70a70f3459c498c7fc1fbc1df8eb, type: 3}
+  m_Name: Barricade
+  m_EditorClassIdentifier: 
+  BuildingName: Barricade
+  BuildingSprite: {fileID: 6401246019045408765, guid: 8ff036f26a85009468cc82589993e5fa,
+    type: 3}
+  BuildingInstancePrefab: {fileID: 4194036922013673332, guid: 37643f5dde3b1ed418cc0a84f483fab0,
+    type: 3}
+  BuildingInstanceExamplePrefab: {fileID: 4194036922013673332, guid: ff48971ad14341144a46f46742a6427a,
+    type: 3}
+  BuildingCost:
+    MetalCost: 1
+    FoodCost: 0

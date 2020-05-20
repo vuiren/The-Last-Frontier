@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ally
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Allies
+  - Enemies
+  - AlliesProjectiles
+  - Buildings
+  - BuildingsExamples
+  - ZombifiedBuildings
+  - Resources
+  - Camera
+  - CameraBounds
+  - ResourceCollider
+  - Flag
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Buildings
+    uniqueID: 3975456389
+    locked: 0
+  - name: BuildingsExample
+    uniqueID: 1108348605
+    locked: 0
+  - name: Npc
+    uniqueID: 2349786723
+    locked: 0
+  - name: Projectiles
+    uniqueID: 46717135
+    locked: 0
+  - name: Resources
+    uniqueID: 2284665229
+    locked: 0
+  - name: GUI
+    uniqueID: 959771249
+    locked: 0

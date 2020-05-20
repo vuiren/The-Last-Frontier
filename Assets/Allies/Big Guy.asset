@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649e4d2a466adc7478d39462bf1d81ea, type: 3}
+  m_Name: Big Guy
+  m_EditorClassIdentifier: 
+  AllyName: Big mAn
+  AllyImage: {fileID: -8416445590004911701, guid: a6d3cc30d861faf4fa879d62ce00df2b,
+    type: 3}
+  AllyPrefab: {fileID: 8721982974888221246, guid: 5ec23003a1ee6d14e9512e297ebe06b3,
+    type: 3}
+  AvailableCommand: 00000000
+  AllyCost:
+    MetalCost: 3
+    FoodCost: 3

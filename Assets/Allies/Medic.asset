@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649e4d2a466adc7478d39462bf1d81ea, type: 3}
+  m_Name: Medic
+  m_EditorClassIdentifier: 
+  AllyName: Medic
+  AllyImage: {fileID: 7707176514192498382, guid: d2bce134f5aec4e4791a91b4bbc146f6,
+    type: 3}
+  AllyPrefab: {fileID: 2916361370104683500, guid: 3c50a1b2ac1600c41b79d435702c9ab7,
+    type: 3}
+  AvailableCommand: 00000000
+  AllyCost:
+    MetalCost: 3
+    FoodCost: 1

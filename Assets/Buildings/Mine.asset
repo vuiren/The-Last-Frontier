@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1c70a70f3459c498c7fc1fbc1df8eb, type: 3}
+  m_Name: Mine
+  m_EditorClassIdentifier: 
+  BuildingName: Mine
+  BuildingSprite: {fileID: 2284130143884384608, guid: cb62684db4d855643aed2ffd9bcfe6cd,
+    type: 3}
+  BuildingInstancePrefab: {fileID: 6114181719782730971, guid: a6aaa44d29df0b64f9654c31f7944ecc,
+    type: 3}
+  BuildingInstanceExamplePrefab: {fileID: 6114181719782730971, guid: 63e4156697496474c87fcbea4079fd14,
+    type: 3}
+  BuildingCost:
+    MetalCost: 2
+    FoodCost: 1
