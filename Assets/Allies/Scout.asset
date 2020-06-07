@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Scout
   m_EditorClassIdentifier: 
   AllyName: Scout
-  AllyImage: {fileID: -6159013924615883979, guid: 3241ce9bdffaf7f428fbe1fab8849667,
+  AllyImage: {fileID: 708573974320990946, guid: 3241ce9bdffaf7f428fbe1fab8849667,
     type: 3}
   AllyPrefab: {fileID: 6450607219195122705, guid: ffe9d045c85c04041ab096807ac57244,
     type: 3}

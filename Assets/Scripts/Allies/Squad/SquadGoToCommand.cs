@@ -27,7 +27,7 @@ public class SquadGoToCommand : SquadComponent
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
+		if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
 			SendCommand();
 	}
 

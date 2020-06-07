@@ -40,7 +40,7 @@ public class SquadBuildCommand : SquadComponent
 	{
 		ShowPrefabExample();
 		MovePrefabExample();
-		if(Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
+		if(Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
 		{
 			TryPlacePrefab();
 		}
@@ -59,6 +59,7 @@ public class SquadBuildCommand : SquadComponent
 		if (!hit)
 		{
 			eventsProxy.OnCommandSending?.Invoke(new Command(CommandsEnum.Build, buildingExampleInstance.transform.position, buildingInfo));
+			buildingInfo = null;
 			enabled = false;
 			eventsProxy.OnCommandTypeChanged?.Invoke(CommandsEnum.GoTo);
 		}

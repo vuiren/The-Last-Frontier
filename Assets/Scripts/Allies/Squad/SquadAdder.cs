@@ -62,6 +62,11 @@ public class SquadAdder : SquadComponent
 		}
 	}
 
+	public void ClearSquad()
+	{
+		eventsProxy.OnClearSquad?.Invoke();
+	}
+
 	private void AddAlly()
 	{
 		var mousePos = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -87,8 +92,8 @@ public class SquadAdder : SquadComponent
 		}
 		else
 		{
-			if (holdingAdding) return;
-			eventsProxy.OnClearSquad?.Invoke();
+		/*	if (holdingAdding) return;
+			eventsProxy.OnClearSquad?.Invoke();*/
 		}
 	}
 }
