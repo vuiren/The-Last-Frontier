@@ -13,7 +13,8 @@ public class FarmGenerateResource : FarmComponent
 
 	private void Generate()
 	{
-		GlobalDataTransfer.MetalCount += resourceToGenerate.MetalCost;
-		GlobalDataTransfer.ConsumingFoodCount += resourceToGenerate.FoodCost;
+		var instance = GameInfoSingleton.Instance;
+		instance.MetalCount += resourceToGenerate.MetalCost;
+		instance.ConsumingFoodCount += resourceToGenerate.FoodCost;
 	}
 }

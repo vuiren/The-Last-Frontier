@@ -31,10 +31,11 @@ namespace Building
 		private void DoBuildBuilding()
 		{
 			var cost = buildingInfo.BuildingCost;
-			if (cost.FoodCost + GlobalDataTransfer.ConsumingFoodCount > GlobalDataTransfer.AvailableFoodAmount || cost.MetalCost > GlobalDataTransfer.MetalCount) return;
+			var instance = GameInfoSingleton.Instance;
+			if (cost.FoodCost + instance.ConsumingFoodCount > instance.AvailableFoodAmount || cost.MetalCost > instance.MetalCount) return;
 			var building = Instantiate(buildingInfo.BuildingInstancePrefab, buildingPlace, new Quaternion());
-			GlobalDataTransfer.MetalCount -= buildingInfo.BuildingCost.MetalCost;
-			GlobalDataTransfer.OnCommandTypeChange?.Invoke(CommandsEnum.GoTo);
+			instance.MetalCount -= buildingInfo.BuildingCost.MetalCost;
+			instance.OnCommandTypeChange?.Invoke(CommandsEnum.GoTo);
 			eventsProxy.EndBuilding?.Invoke();
 		}
 	}

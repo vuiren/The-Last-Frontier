@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class AttackingRoutine : AttackingComponent
 {
@@ -7,6 +8,9 @@ public class AttackingRoutine : AttackingComponent
 
 	[SerializeField]
 	float attackStartDistance = 0.2f;
+
+	[SerializeField]
+	UnityEvent onAttack;
 
 	GameObject target;
 	float curTime;

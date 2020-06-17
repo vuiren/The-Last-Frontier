@@ -7,6 +7,7 @@ public class ChangeCommandType : MonoBehaviour
 
 	public void DoChangeCommandType()
 	{
-		GlobalDataTransfer.OnCommandTypeChange?.Invoke(commandTypeToSet);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnCommandTypeChange?.Invoke(commandTypeToSet);
 	}
 }

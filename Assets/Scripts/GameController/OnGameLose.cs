@@ -8,6 +8,8 @@ public class OnGameLose : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnGameOver += onGameLose.Invoke;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnGameOver += onGameLose.Invoke;
 	}
 }

@@ -16,7 +16,9 @@ public class FlagGameWinning : MonoBehaviour
 
 	private void WinGame()
 	{
-		GlobalDataTransfer.OnGameWinning?.Invoke();
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnGameWinning?.Invoke();
 		onWinningTrigger.Invoke();
 	}
 }

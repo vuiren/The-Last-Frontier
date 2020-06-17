@@ -7,9 +7,11 @@ public class GameLose : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnAlliesCountChanged += UpdateList;
-		GlobalDataTransfer.OnCasarmsCountChanged += UpdateList;
-		GlobalDataTransfer.OnSceneChanging += UpdateBool;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnAlliesCountChanged += UpdateList;
+		instance.OnCasarmsCountChanged += UpdateList;
+		instance.OnSceneChanging += UpdateBool;
 	}
 
 	private void UpdateBool()
@@ -20,9 +22,11 @@ public class GameLose : MonoBehaviour
 	private void UpdateList()
 	{
 		if (changingScene) return;
-		if (GlobalDataTransfer.Allies.Count == 0 && GlobalDataTransfer.Casarms.Count <= 0) 
+		var instance = GameInfoSingleton.Instance;
+
+		if (instance.Allies.Count == 0 && instance.Casarms.Count <= 0) 
 		{
-			GlobalDataTransfer.OnGameOver?.Invoke();
+			instance.OnGameOver?.Invoke();
 		}
 	}
 }

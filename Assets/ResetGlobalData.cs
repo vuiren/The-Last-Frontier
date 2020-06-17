@@ -6,6 +6,7 @@ public class ResetGlobalData : MonoBehaviour
 {
 	private void Awake()
 	{
-		GlobalDataTransfer.ResetVariables();
+		var instance = GameInfoSingleton.Instance;
+		instance.ResetVariables();
 	}
 }

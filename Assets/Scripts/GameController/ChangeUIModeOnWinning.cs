@@ -6,7 +6,15 @@ public class ChangeUIModeOnWinning : MonoBehaviour
 {
     private void Awake()
     {
-        GlobalDataTransfer.OnGameWinning += () => GlobalDataTransfer.OnUIModeChange?.Invoke(UIModesEnum.WinningUI);
+        var instance = GameInfoSingleton.Instance;
+
+        instance.OnGameWinning += () => instance.GUIMode = UIModesEnum.WinningUI;// ?.Invoke(UIModesEnum.WinningUI);
     }
 
+    private void OnDestroy()
+    {
+        var instance = GameInfoSingleton.Instance;
+        if (!instance) return;
+        instance.OnGameWinning -= () => instance.GUIMode = UIModesEnum.WinningUI;// ?.Invoke(UIModesEnum.WinningUI);
+    }
 }

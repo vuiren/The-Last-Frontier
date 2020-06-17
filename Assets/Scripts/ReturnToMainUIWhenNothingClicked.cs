@@ -23,6 +23,8 @@ public class ReturnToMainUIWhenNothingClicked : MonoBehaviour
 
 	private void DoChangeUIMode()
 	{
-		GlobalDataTransfer.OnUIModeChange.Invoke(UIModesEnum.MainUI);
+		var instance = GameInfoSingleton.Instance;
+
+		instance.GUIMode = UIModesEnum.LostUI;// .Invoke(UIModesEnum.MainUI);
 	}
 }

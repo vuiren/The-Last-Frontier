@@ -7,6 +7,7 @@ public class ChangeUIMode : MonoBehaviour
 
 	public void DoChangeUIMode()
 	{
-		GlobalDataTransfer.OnUIModeChange?.Invoke(modeToSet);
+		var instance = GameInfoSingleton.Instance;
+		instance.GUIMode = modeToSet;//OnUIModeChanged?.Invoke(modeToSet);
 	}
 }

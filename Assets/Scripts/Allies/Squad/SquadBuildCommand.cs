@@ -18,7 +18,8 @@ public class SquadBuildCommand : SquadComponent
 		base.SubscribeToEvents();
 		eventsProxy.OnCommandTypeChanged += (CommandsEnum x) => enabled = x == CommandsEnum.Build;
 		eventsProxy.OnClearSquad += () => enabled = false;
-		GlobalDataTransfer.OnBuildingInfoChange += SetBuildingToBuild;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnBuildingInfoChange += SetBuildingToBuild;
 	}
 
 	private void Start()
@@ -48,7 +49,8 @@ public class SquadBuildCommand : SquadComponent
 
 	private void TryPlacePrefab()
 	{
-		if (buildingInfo == null || buildingInfo.BuildingCost.MetalCost > GlobalDataTransfer.MetalCount)
+		var instance = GameInfoSingleton.Instance;
+		if (buildingInfo == null || buildingInfo.BuildingCost.MetalCost > instance.MetalCount)
 		{
 			return;
 		}

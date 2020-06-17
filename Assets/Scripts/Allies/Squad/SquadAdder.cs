@@ -53,12 +53,6 @@ public class SquadAdder : SquadComponent
 				AddAlly();
 				return;
 			}
-
-			/*if (Input.GetMouseButton(0))
-			{
-				holdingAdding = true;
-				AddAlly();
-			}*/
 		}
 	}
 

@@ -36,7 +36,8 @@ namespace Building
 			if(Input.GetMouseButtonDown(1))
 			{
 				eventsProxy.EndBuilding?.Invoke();
-				GlobalDataTransfer.OnCommandTypeChange?.Invoke(CommandsEnum.GoTo);
+				var instance = GameInfoSingleton.Instance;
+				instance.OnCommandTypeChange?.Invoke(CommandsEnum.GoTo);
 				return;
 			}
 			var reached = DistanceTracker.IsObjectReachedDestination(transform.position, pos, stopDistance);

@@ -4,16 +4,21 @@ public class AllyListRegisterer : MonoBehaviour
 {
 	private void OnEnable()
 	{
-		GlobalDataTransfer.AddAlly(gameObject);
+		var instance = GameInfoSingleton.Instance;
+		instance.AddAlly(gameObject);
 	}
 
 	private void OnDisable()
 	{
-		GlobalDataTransfer.RemoveAlly(gameObject);
+		var instance = GameInfoSingleton.Instance;
+		if (!instance) return;
+		instance.RemoveAlly(gameObject);
 	}
 
 	private void OnDestroy()
 	{
-		GlobalDataTransfer.RemoveAlly(gameObject);
+		var instance = GameInfoSingleton.Instance;
+		if (!instance) return;
+		instance.RemoveAlly(gameObject);
 	}
 }

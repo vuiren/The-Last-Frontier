@@ -11,13 +11,15 @@ public class ShowActiveCommandsButtons : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnSquadListChanger += ShowButtons;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnSquadListChanger += ShowButtons;
 	}
 
 	public void ShowButtons(List<Transform> squad)
 	{
 		HideAllButtons();
-		var availableCommands = GetAvailableCommands(squad);
+		/*var availableCommands = GetAvailableCommands(squad);
 		foreach(var command in availableCommands)
 		{
 			switch(command)
@@ -29,7 +31,7 @@ public class ShowActiveCommandsButtons : MonoBehaviour
 					BuildButton.SetActive(true);
 					break;
 			}
-		}
+		}*/
 	}
 
 	private void HideAllButtons()

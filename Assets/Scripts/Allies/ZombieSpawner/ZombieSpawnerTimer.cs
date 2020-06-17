@@ -11,7 +11,8 @@ public class ZombieSpawnerTimer : ZombieSpawnerComponent
 	internal override void SubscribeToEvents()
 	{
 		base.SubscribeToEvents();
-		GlobalDataTransfer.OnGameWinning += StopTimer;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnGameWinning += StopTimer;
 	}
 
 	private void StopTimer()

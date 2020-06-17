@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class SpriteTurner : AttackingComponent
+public class SpriteTurner : MonoBehaviour, ITargetUpdateReceiver
 {
 	[SerializeField]
 	Rigidbody2D rb;
@@ -10,35 +10,33 @@ public class SpriteTurner : AttackingComponent
 	[SerializeField]
 	SpriteRenderer spriteRenderer;
 
-	[ShowInInspector]
-	[ReadOnly]
-	bool enemyVisible;
-
 	[ReadOnly]
 	[ShowInInspector]
-	GameObject enemy;
+	GameObject target;
 
-	internal override void SubscribeToEvents()
+	public void UpdateTarget(GameObject obj)
 	{
-		base.SubscribeToEvents();
-		eventsProxy.OnClosestTargetUpdate += UpdateEnemy;
-	}
-
-	private void UpdateEnemy(GameObject obj)
-	{
-		enemyVisible = obj != null;
-		enemy = obj;
+		target = obj;
 	}
 
 	private void Update()
 	{
-		if (enemy == null || !enemyVisible || !enemy.gameObject.activeSelf)
-			spriteRenderer.flipX = rb.velocity.x <= 0;
+		if (!target)
+			TurnBySpeed();
 		else
-		{
-			var dif = transform.position.x - enemy.transform.position.x;
-			var shootingDirection = dif < 0 ? DirectionsEnum.East : DirectionsEnum.West;
-			spriteRenderer.flipX = shootingDirection != DirectionsEnum.East;
-		}
+			TurnByEnemyPosition();
+	}
+
+	private void TurnByEnemyPosition()
+	{
+		var dif = target.transform.position.x - transform.position.x;
+		spriteRenderer.flipX = dif < 0;//shootingDirection != DirectionsEnum.East;
+	}
+
+	private void TurnBySpeed()
+	{
+		var x = rb.velocity.x;
+		if (Mathf.Approximately(x, 0)) return;
+		spriteRenderer.flipX = x < 0;
 	}
 }

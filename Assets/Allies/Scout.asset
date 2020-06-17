@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Scout
   m_EditorClassIdentifier: 
   AllyName: Scout
-  AllyImage: {fileID: 708573974320990946, guid: 3241ce9bdffaf7f428fbe1fab8849667,
+  AllyImage: {fileID: -6159013924615883979, guid: 3241ce9bdffaf7f428fbe1fab8849667,
     type: 3}
-  AllyPrefab: {fileID: 6450607219195122705, guid: ffe9d045c85c04041ab096807ac57244,
+  AllyPrefab: {fileID: 3117793818688347938, guid: f7e8d8aa76241634aa81f18f597ec633,
     type: 3}
   AvailableCommand: 00000000
   AllyCost:

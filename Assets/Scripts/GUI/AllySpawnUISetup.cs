@@ -30,7 +30,8 @@ public class AllySpawnUISetup : MonoBehaviour
 
 	private void DoChangeBuilding(AllyInfo allyInfo)
 	{
-		if (GlobalDataTransfer.ActiveCasarm == null) return;
-		GlobalDataTransfer.ActiveCasarm.Spawn(allyInfo);
+		var instance = GameInfoSingleton.Instance;
+		if (instance.ActiveCasarm == null) return;
+		instance.ActiveCasarm.Spawn(allyInfo);
 	}
 }

@@ -12,16 +12,19 @@ public class BuildButtonInteractiveChange : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnMetalCountChanged += CheckForMetalIfActive;
-		GlobalDataTransfer.OnConsumingFoodCountChanged += CheckForMetalIfActive;
-		CheckForMetalIfActive(GlobalDataTransfer.MetalCount);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnMetalCountChanged += CheckForMetalIfActive;
+		instance.OnConsumingFoodCountChanged += CheckForMetalIfActive;
+		CheckForMetalIfActive(instance.MetalCount);
 	}
 
 	private void CheckForMetalIfActive(int metalCount)
 	{
 		var buttonInfo = this.buttonInfo.buildingInfo.BuildingCost;
-		bool foodCheck = (buttonInfo.FoodCost + GlobalDataTransfer.ConsumingFoodCount <= GlobalDataTransfer.AvailableFoodAmount);
-		bool metalCheck = buttonInfo.MetalCost <= GlobalDataTransfer.MetalCount;
+		var instance = GameInfoSingleton.Instance;
+
+		bool foodCheck = (buttonInfo.FoodCost + instance.ConsumingFoodCount <= instance.AvailableFoodAmount);
+		bool metalCheck = buttonInfo.MetalCost <= instance.MetalCount;
 		button.interactable = metalCheck && foodCheck;
 	}
 }

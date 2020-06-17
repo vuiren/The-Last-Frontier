@@ -3,6 +3,7 @@
 	internal override void SubscribeToEvents()
 	{
 		base.SubscribeToEvents();
-		GlobalDataTransfer.OnGameWinning += () => enabled = false;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnGameWinning += () => enabled = false;
 	}
 }

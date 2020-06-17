@@ -7,11 +7,14 @@ public class FarmIncreaseAvailableFood : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.AvailableFoodAmount += increaseCount;
+		var instance = GameInfoSingleton.Instance;
+		instance.AvailableFoodAmount += increaseCount;
 	}
 
 	private void OnDisable()
 	{
-		GlobalDataTransfer.AvailableFoodAmount -= increaseCount;
+		var instance = GameInfoSingleton.Instance;
+		if (!instance) return;
+		instance.AvailableFoodAmount -= increaseCount;
 	}
 }

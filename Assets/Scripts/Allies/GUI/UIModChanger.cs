@@ -20,12 +20,21 @@ public class UIModChanger : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnUIModeChange += ChangeMode;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnGUIModeChanged += ChangeMode;
 	}
 
-	private void ChangeMode(UIModesEnum obj)
+	private void OnDestroy()
 	{
-		switch(obj)
+		var instance = GameInfoSingleton.Instance;
+		if (!instance) return;
+		instance.OnGUIModeChanged -= ChangeMode;
+	}
+
+	private void ChangeMode()
+	{
+		var guiMode = GameInfoSingleton.Instance.GUIMode;
+		switch(guiMode)
 		{
 			case UIModesEnum.BuildUI:
 				OnBuildUIMode.Invoke();

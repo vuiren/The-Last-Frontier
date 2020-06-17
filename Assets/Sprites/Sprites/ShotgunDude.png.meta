@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 708573974320990946
     second: ShotgunDude_0
+  - first:
+      213: -6159013924615883979
+    second: ShotgunDude 0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -81,7 +84,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShotgunDude_0
+      name: ShotgunDude 0
       rect:
         serializedVersion: 2
         x: 0
@@ -93,10 +96,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2ea4d74864c55d900800000000000000
-      internalID: 708573974320990946
+      spriteID: 533f598a779c68aa0800000000000000
+      internalID: -6159013924615883979
       vertices: []
       indices: 
       edges: []

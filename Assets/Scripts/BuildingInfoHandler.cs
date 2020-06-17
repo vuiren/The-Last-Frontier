@@ -8,11 +8,14 @@ public class BuildingInfoHandler : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.ConsumingFoodCount += buildingInfo.BuildingCost.FoodCost;
+		var instance = GameInfoSingleton.Instance;
+		instance.ConsumingFoodCount += buildingInfo.BuildingCost.FoodCost;
 	}
 
 	private void OnDestroy()
 	{
-		GlobalDataTransfer.ConsumingFoodCount -= buildingInfo.BuildingCost.FoodCost;
+		var instance = GameInfoSingleton.Instance;
+		if (!instance) return;
+		instance.ConsumingFoodCount -= buildingInfo.BuildingCost.FoodCost;
 	}
 }

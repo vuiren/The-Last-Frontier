@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MedicHealTarget : MedicComponent
+public class MedicHealTarget : MonoBehaviour, ITargetUpdateReceiver
 {
 	[SerializeField]
 	int healCount = 1;
@@ -8,27 +8,20 @@ public class MedicHealTarget : MedicComponent
 	[SerializeField]
 	float timeBetweenHealing = 1f;
 
-	Transform target;
+	GameObject target;
 	float curTime;
 
-	internal override void SubscribeToEvents()
-	{
-		base.SubscribeToEvents();
-		eventsProxy.OnClosestHealTargetUpdate += UpdateTarget;
-	}
-
-	private void UpdateTarget(Transform obj)
+	public void UpdateTarget(GameObject obj)
 	{
 		target = obj;
 	}
 
 	private void Update()
 	{
-		if (target == null) return; 
+		ReloadProcess();
+		if (!target) return; 
 		if (ReadyToHeal())
 			Heal();
-		else
-			ReloadProcess();
 	}
 
 	private bool ReadyToHeal()
@@ -38,10 +31,20 @@ public class MedicHealTarget : MedicComponent
 
 	private void Heal()
 	{
-		var health = target.GetComponent<HealthEventsProxy>();
-		if (!health.RequiredHealing) return;
-		health.OnHeal?.Invoke(healCount);
+		var health = target.GetComponent<IHealable>();
+		if (!ShouldHealTarget(health)) return;
+		health.Heal(healCount);
+		StartHealingReloading();
+	}
+
+	private void StartHealingReloading()
+	{
 		curTime = timeBetweenHealing;
+	}
+
+	private bool ShouldHealTarget(IHealable healable)
+	{
+		return healable != null && healable.HealingRequired();
 	}
 
 	private void ReloadProcess()

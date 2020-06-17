@@ -2,41 +2,61 @@
 using System;
 using UnityEngine;
 
-public class MedicDrawLineToHealingTarget : MedicComponent
+public class MedicDrawLineToHealingTarget : MonoBehaviour, ITargetUpdateReceiver
 {
+	[SerializeField]
+	Transform rayStartTransform;
+
+	[SerializeField]
+	Vector3 healingRayTargetOffset;
+
 	[SerializeField]
 	LineRenderer lineRenderer;
 
 	[ShowInInspector]
 	[ReadOnly]
-	Transform target;
-	internal override void SubscribeToEvents()
-	{
-		base.SubscribeToEvents();
-		eventsProxy.OnClosestHealTargetUpdate += UpdateTarget;
-		eventsProxy.OnHealTargetGone += StopLine;
-	}
+	GameObject target;
 
 	private void StopLine()
 	{
 		lineRenderer.SetPositions(new Vector3[2] { new Vector3(), new Vector3() });
-		target = null;
 	}
 
-	private void UpdateTarget(Transform obj)
+	public void UpdateTarget(GameObject obj)
 	{
 		target = obj;
 	}
 
 	private void Update()
 	{
-		if (target == null) return;
-		DrawLine(target);
+		var healingRequired = TargetRequiringHealing();
+
+		if (!target || !healingRequired)
+		{
+			StopLine();
+			return;
+		}
+		if (healingRequired)
+		{
+			DrawLineToTarget(target);
+		}
 	}
 
-	private void DrawLine(Transform obj)
+	private bool TargetRequiringHealing()
 	{
-		Vector3[] points = new Vector3[2] { transform.position + new Vector3(0, 0.05f, 0), obj.position + new Vector3(0, 0.05f, 0) };
+		if (!target) return false;
+		var health = target.GetComponent<IHealable>();
+		if (health == null) return false;
+		return health.HealingRequired();
+	}
+
+	private void DrawLineToTarget(GameObject obj)
+	{
+		var objPos = obj.transform.position;
+		Vector3 rayStart = rayStartTransform.position;
+		Vector3 rayEnd = objPos + healingRayTargetOffset;
+
+		Vector3[] points = new Vector3[2] { rayStart, rayEnd };
 		lineRenderer.SetPositions(points);
 	}
 }

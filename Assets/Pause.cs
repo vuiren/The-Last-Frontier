@@ -10,21 +10,24 @@ public class Pause : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnPauseChanged += PauseGame;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnPauseChanged += PauseGame;
 	}
 
 	private void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			GlobalDataTransfer.GameOnPause = !GlobalDataTransfer.GameOnPause;
+			var instance = GameInfoSingleton.Instance;
+			instance.IsGameOnPause = !instance.IsGameOnPause;
 		}
 	}
 
 	private void PauseGame()
 	{
-		Time.timeScale = GlobalDataTransfer.GameOnPause ? 0 : 1;
-		if (GlobalDataTransfer.GameOnPause)
+		var instance = GameInfoSingleton.Instance;
+		Time.timeScale = instance.IsGameOnPause ? 0 : 1;
+		if (instance.IsGameOnPause)
 		{
 			PauseChangeUIMode.DoChangeUIMode();
 		}

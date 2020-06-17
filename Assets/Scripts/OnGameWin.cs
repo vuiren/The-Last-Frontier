@@ -8,6 +8,8 @@ public class OnGameWin : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnGameWinning += onGameWinEvents.Invoke;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnGameWinning += onGameWinEvents.Invoke;
 	}
 }

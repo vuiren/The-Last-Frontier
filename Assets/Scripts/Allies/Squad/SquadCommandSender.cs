@@ -20,8 +20,10 @@ public class SquadCommandSender : SquadComponent
 	{
 		foreach (var e in squad)
 		{
-			var reciever = e.GetComponent<CommandReciever>();
-			reciever.ExecuteCommand(new Command(obj.commandType, obj.commandVectorValue, obj.commandBuildingValue));
+			var reciever = e.GetComponent<ICommandReceiver>();
+			Command command = new Command(obj.commandType, obj.commandVectorValue, obj.commandBuildingValue);
+
+			reciever.ReceiveCommand(command);
 		}
 	}
 }

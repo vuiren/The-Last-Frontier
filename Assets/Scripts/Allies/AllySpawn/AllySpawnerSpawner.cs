@@ -14,7 +14,8 @@ public class AllySpawnerSpawner : AllySpawnerComponet
 	private void Spawn(AllyInfo obj)
 	{
 		Instantiate(obj.AllyPrefab, spawnPoint.position, spawnPoint.rotation);
-		GlobalDataTransfer.MetalCount -= obj.AllyCost.MetalCost;
+		var instance = GameInfoSingleton.Instance;
+		instance.MetalCount -= obj.AllyCost.MetalCost;
 	//	GlobalDataTransfer.ConsumingFoodCount += obj.AllyCost.FoodCost;
 	}
 }

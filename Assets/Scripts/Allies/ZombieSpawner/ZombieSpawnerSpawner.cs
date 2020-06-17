@@ -17,7 +17,8 @@ public class ZombieSpawnerSpawner : ZombieSpawnerComponent
 	{
 		base.SubscribeToEvents();
 		eventsProxy.OnZombieSpawn += SpawnZombie;
-		GlobalDataTransfer.OnGameWinning += StopSpawn;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnGameWinning += StopSpawn;
 	}
 
 	private void StopSpawn()

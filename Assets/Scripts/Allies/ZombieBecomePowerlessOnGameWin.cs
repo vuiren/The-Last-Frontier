@@ -10,7 +10,8 @@ public class ZombieBecomePowerlessOnGameWin : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnGameWinning += BuryAndDie;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnGameWinning += BuryAndDie;
 	}
 
 	private void BuryAndDie()
@@ -20,6 +21,8 @@ public class ZombieBecomePowerlessOnGameWin : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		GlobalDataTransfer.OnGameWinning -= BuryAndDie;
+		var instance = GameInfoSingleton.Instance;
+		if (instance)
+			instance.OnGameWinning -= BuryAndDie;
 	}
 }

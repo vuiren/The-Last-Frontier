@@ -11,8 +11,9 @@ public class SyncMetalCount : MonoBehaviour
 	private void Awake()
 	{
 		//startText = text.text;
-		GlobalDataTransfer.OnMetalCountChanged += UpdateMetalCount;
-		UpdateMetalCount(GlobalDataTransfer.MetalCount);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnMetalCountChanged += UpdateMetalCount;
+		UpdateMetalCount(instance.MetalCount);
 	}
 
 	private void UpdateMetalCount(int obj)

@@ -1,25 +1,15 @@
 ﻿public class AllySpawnGlobabEventsSubscriber : AllySpawnerComponet
 {
-	internal override void SubscribeToEvents()
-	{
-		base.SubscribeToEvents();
-		GlobalDataTransfer.OnUIModeChange += (UIModesEnum x) =>
-		{
-			if(x != UIModesEnum.BuildUI)
-			{
-				GlobalDataTransfer.ActiveCasarm = null;
-			}
-		};
-	}
-
 	public void BecomeActiveCasarm()
 	{
-		GlobalDataTransfer.ActiveCasarm = this;
+		var instance = GameInfoSingleton.Instance;
+		instance.ActiveCasarm = this;
 	}
 
 	public void Spawn(AllyInfo allyInfo)
 	{
 		eventsProxy.OnSpawning.Invoke(allyInfo);
-		GlobalDataTransfer.ActiveCasarm = null;
+		var instance = GameInfoSingleton.Instance;
+		instance.ActiveCasarm = null;
 	}
 }

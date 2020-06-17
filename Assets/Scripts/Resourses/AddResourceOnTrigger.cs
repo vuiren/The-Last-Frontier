@@ -8,7 +8,9 @@ public class AddResourceOnTrigger : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (!collision.gameObject.CompareTag("Ally")) return;
-		GlobalDataTransfer.MetalCount += resorceCountAdd.MetalCost;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.MetalCount += resorceCountAdd.MetalCost;
 		Destroy(gameObject);
 	}
 }

@@ -4,6 +4,8 @@ public class UnPauseGame : MonoBehaviour
 {
 	public void ResumeGame()
 	{
-		GlobalDataTransfer.GameOnPause = !GlobalDataTransfer.GameOnPause;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.IsGameOnPause = !instance.IsGameOnPause;
 	}
 }

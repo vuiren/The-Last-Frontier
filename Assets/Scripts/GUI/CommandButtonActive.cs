@@ -11,7 +11,8 @@ public class CommandButtonActive : MonoBehaviour
 
 	private void Awake()
 	{
-		GlobalDataTransfer.OnCommandTypeChange += ChooseActivity;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnCommandTypeChange += ChooseActivity;
 		ChooseActivity(CommandsEnum.GoTo);
 	}
 

@@ -10,7 +10,9 @@ public class MoveRightOnWin : MonoBehaviour
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		GlobalDataTransfer.OnGameWinning += Move;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnGameWinning += Move;
 	}
 
 	private void Move()

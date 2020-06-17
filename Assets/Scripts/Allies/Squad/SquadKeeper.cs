@@ -12,16 +12,19 @@ public class SquadKeeper : SquadComponent
 		eventsProxy.OnAllyAdd += AddAlly;
 		eventsProxy.OnAllyRemove += RemoveAlly;
 		eventsProxy.OnClearSquad += ClearSquad;
-		GlobalDataTransfer.OnAllyDeath += RemoveAlly;
+		var instance = GameInfoSingleton.Instance;
+		instance.OnAllyDeath += RemoveAlly;
 	}
 
 	private void RemoveAlly(Transform obj)
 	{
 		if (!squad.Contains(obj)) return;
-		obj.GetComponent<SquadMemberEventsProxy>().OnMemberUnchoosed?.Invoke();
+		var choosable = obj.GetComponent<IChoosable>();//.OnMemberUnchoosed?.Invoke();
+		choosable.Unchoose();
 		squad.Remove(obj);
 		eventsProxy.OnSquadListChanged?.Invoke(squad);
-		GlobalDataTransfer.OnSquadListChanger?.Invoke(squad);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnSquadListChanger?.Invoke(squad);
 	}
 
 	private void AddAlly(Transform obj)
@@ -32,9 +35,10 @@ public class SquadKeeper : SquadComponent
 			return;
 		}
 		squad.Add(obj);
-		obj.GetComponent<SquadMemberEventsProxy>().OnMemberChoosed?.Invoke();
+		obj.GetComponent<IChoosable>().Choose();
 		eventsProxy.OnSquadListChanged?.Invoke(squad);
-		GlobalDataTransfer.OnSquadListChanger?.Invoke(squad);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnSquadListChanger?.Invoke(squad);
 	}
 
 	public void ClearSquad()

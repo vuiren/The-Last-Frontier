@@ -13,9 +13,10 @@ public class HealthAllyDeath : HealthComponent
 
 	private void SpawnZombifiedVersion()
 	{
-		GlobalDataTransfer.OnAllyDeath?.Invoke(transform);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnAllyDeath?.Invoke(transform);
 		Instantiate(zombifiedVersion, transform.position, transform.rotation);
-		GlobalDataTransfer.OnAllyDeath?.Invoke(transform);
+		instance.OnAllyDeath?.Invoke(transform);
 		Destroy(gameObject);
 	}
 }

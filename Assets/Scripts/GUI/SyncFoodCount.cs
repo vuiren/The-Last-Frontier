@@ -11,14 +11,17 @@ public class SyncFoodCount : MonoBehaviour
 	private void Awake()
 	{
 		//	startText = text.text;
-		GlobalDataTransfer.OnConsumingFoodCountChanged += UpdateFoodCount;
-		GlobalDataTransfer.OnAvailableFoodAmountChanged += UpdateFoodCount;
+		var instance = GameInfoSingleton.Instance;
+
+		instance.OnConsumingFoodCountChanged += UpdateFoodCount;
+		instance.OnAvailableFoodAmountChanged += UpdateFoodCount;
 		UpdateFoodCount(0);
 	}
 
 	private void UpdateFoodCount(int obj)
 	{
-		var a = GlobalDataTransfer.ConsumingFoodCount + " / " + GlobalDataTransfer.AvailableFoodAmount;
+		var instance = GameInfoSingleton.Instance;
+		var a = instance.ConsumingFoodCount + " / " + instance.AvailableFoodAmount;
 		if (text != null)
 			text.text = startText + " " + a;
 	}

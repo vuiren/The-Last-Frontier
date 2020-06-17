@@ -30,6 +30,7 @@ public class BuildUISetup : MonoBehaviour
 
 	private void DoChangeBuilding(Building.BuildingInfo buildingInfo)
 	{
-		GlobalDataTransfer.OnBuildingInfoChange?.Invoke(buildingInfo);
+		var instance = GameInfoSingleton.Instance;
+		instance.OnBuildingInfoChange?.Invoke(buildingInfo);
 	}
 }

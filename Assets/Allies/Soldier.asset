@@ -15,7 +15,7 @@ MonoBehaviour:
   AllyName: Soldier
   AllyImage: {fileID: -844595967053781376, guid: be2a283db2a86a649b1c3306cc6a2cd2,
     type: 3}
-  AllyPrefab: {fileID: 8721982974888221246, guid: 5a647da9e3558e840b1236a8b5837438,
+  AllyPrefab: {fileID: 3117793818688347938, guid: 2029bc5f9599e7d47ab658000bbbb79f,
     type: 3}
   AvailableCommand: 00000000
   AllyCost:

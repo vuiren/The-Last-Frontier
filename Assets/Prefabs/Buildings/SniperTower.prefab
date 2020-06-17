@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 4402991692461306036}
   - component: {fileID: 7355188575702413221}
   - component: {fileID: 8317256420494701352}
+  - component: {fileID: 6627496497658865023}
   m_Layer: 11
   m_Name: SniperTower
   m_TagString: Untagged
@@ -157,6 +158,9 @@ MonoBehaviour:
   alwaysEnabled: 0
   timeBetweenAttacks: 1
   attackStartDistance: 10
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2923634439733150108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095db6c349c2b784c85cb46aae49fd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysEnabled: 0
   bulletSpawnPoint: {fileID: 5976962904389809083}
   aimingOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &5689842096160520381
@@ -201,7 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095db6c349c2b784c85cb46aae49fd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysEnabled: 0
   bulletSpawnPoint: {fileID: 4541170625207311471}
   aimingOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2006393670813026246
@@ -368,6 +370,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6627496497658865023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318834453634061456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a69013c6c363d47905c6dab15c6462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showSearchRadius: 1
+  searchRadius: 8
+  updateTime: 0.5
+  searchingLayers:
+    serializedVersion: 2
+    m_Bits: 8448
+  onClosestTargetUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6176073782028851467
 GameObject:
   m_ObjectHideFlags: 0
