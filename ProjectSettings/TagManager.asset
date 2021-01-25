@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ally
   - Enemy
+  - Bootstrap
   layers:
   - Default
   - TransparentFX
@@ -26,9 +27,9 @@ TagManager:
   - CameraBounds
   - ResourceCollider
   - Flag
-  - 
-  - 
-  - 
+  - Ground
+  - CollisionTriggers
+  - Bridge
   - 
   - 
   - 

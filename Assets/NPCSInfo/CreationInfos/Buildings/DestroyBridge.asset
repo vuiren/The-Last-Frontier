@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129260bde9b67d9419b2b237f79ffe2d, type: 3}
+  m_Name: DestroyBridge
+  m_EditorClassIdentifier: 
+  creationName: DestroyBridge
+  creationPrefab: {fileID: 965148057717122362, guid: 6f14830c5e07df84f833b6d314b11ead,
+    type: 3}
+  creationImage: {fileID: 5664296223337594965, guid: 95a9250c2f406354495dfb5f3b90224f,
+    type: 3}
+  creationCost:
+    metalCount: 0
+    foodCount: 0

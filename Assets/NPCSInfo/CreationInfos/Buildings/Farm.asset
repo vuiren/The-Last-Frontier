@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf1abbbb8bc14342aaee8201d523347, type: 3}
+  m_Name: Farm
+  m_EditorClassIdentifier: 
+  creationName: Farm
+  creationPrefab: {fileID: 4194036922013673332, guid: 89cba1054f4059a42b05353fc4e1f8ce,
+    type: 3}
+  creationImage: {fileID: 6416006213633042791, guid: 0c398fde609074e4389bf6424fbf5fd9,
+    type: 3}
+  creationCost:
+    metalCount: 5
+    foodCount: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7b9d9b4d3ccd642a41ba9847b92dc7, type: 3}
+  m_Name: RegularZombie
+  m_EditorClassIdentifier: 
+  npcImage: {fileID: 5855530506491461975, guid: d4b7b0da4cd816a4e818383d97f9e80c,
+    type: 3}
+  healthCount: 10
+  moveSpeed: 0.3
+  attackSettings:
+    damageCount: 3
+    timeBetweenAttacks: 1
+    enemyNoticeDistance: 3
+    attackSound: {fileID: 8300000, guid: 6d247087539afc244a3051bbc1ff6d66, type: 3}
+    attackType: 0
+    melleAttackStartDistance: 0.2
+    rangeAttackStartDistance: 2
+    projectilePrefab: {fileID: 0}
+    projectilesCount: 1
+    damagePerSecond: 3
+  destroyedPrefab: {fileID: 0}

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7b9d9b4d3ccd642a41ba9847b92dc7, type: 3}
+  m_Name: Scout
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInfo
+  npcImage: {fileID: -6159013924615883979, guid: 3241ce9bdffaf7f428fbe1fab8849667,
+    type: 3}
+  healthCount: 5
+  moveSpeed: 0.6
+  attackSettings:
+    damageCount: 2
+    timeBetweenAttacks: 1.5
+    enemyNoticeDistance: 1
+    attackSound: {fileID: 8300000, guid: 1e29ebb449f2da94e9a952bc135b70fe, type: 3}
+    attackType: 1
+    melleAttackStartDistance: 1
+    rangeAttackStartDistance: 0.7
+    projectilePrefab: {fileID: 2447716405419689771, guid: 3026befbf9354da428d270cfce8c0348,
+      type: 3}
+    projectilesCount: 6
+    damagePerSecond: 8
+  destroyedPrefab: {fileID: 3117793818688347938, guid: acd4a8e552d7aca428ee992efce49e65,
+    type: 3}

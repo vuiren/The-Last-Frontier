@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129260bde9b67d9419b2b237f79ffe2d, type: 3}
+  m_Name: LeftStairs
+  m_EditorClassIdentifier: 
+  creationName: Left Stairs
+  creationPrefab: {fileID: 4997163553948876021, guid: e7d98def3451eac4db55c5bd75756807,
+    type: 3}
+  creationImage: {fileID: 7906122098074863312, guid: 133b64cb3c77ce64abbb55630a5c1e15,
+    type: 3}
+  creationCost:
+    metalCount: 2
+    foodCount: 0

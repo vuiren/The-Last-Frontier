@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7b9d9b4d3ccd642a41ba9847b92dc7, type: 3}
+  m_Name: Casarm
+  m_EditorClassIdentifier: 
+  npcImage: {fileID: -7773709561253029401, guid: c4c50610ec6564848bce2325187190de,
+    type: 3}
+  healthCount: 40
+  moveSpeed: 0
+  attackSettings:
+    damageCount: 1
+    timeBetweenAttacks: 1
+    attackSound: {fileID: 0}
+    attackType: 0
+    melleAttackStartDistance: 1
+    rangeAttackStartDistance: 1
+    projectilesCount: 0
+    damagePerSecond: 0

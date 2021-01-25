@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf1abbbb8bc14342aaee8201d523347, type: 3}
+  m_Name: Barricade
+  m_EditorClassIdentifier: 
+  creationName: Barricade
+  creationPrefab: {fileID: 4194036922013673332, guid: 37643f5dde3b1ed418cc0a84f483fab0,
+    type: 3}
+  creationImage: {fileID: 6401246019045408765, guid: 8ff036f26a85009468cc82589993e5fa,
+    type: 3}
+  creationCost:
+    metalCount: 3
+    foodCount: 0

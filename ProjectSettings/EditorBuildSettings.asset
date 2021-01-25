@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 587ae54f8c966c145a19e2b87f9c47e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FailScene.unity
     guid: 5f239c6682d40d141ac8cf0ec9e11635
+  - enabled: 0
+    path: Assets/Scenes/Hills/Hills.unity
+    guid: 402e9b55a6600ce44a532beaf495e07a
+  - enabled: 0
+    path: Assets/Scenes/Fields.unity
+    guid: cf2a471a13474394584df010f5adc996
   m_configObjects: {}

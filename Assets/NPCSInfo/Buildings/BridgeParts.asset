@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7b9d9b4d3ccd642a41ba9847b92dc7, type: 3}
+  m_Name: BridgeParts
+  m_EditorClassIdentifier: 
+  npcImage: {fileID: 4218174109635494438, guid: 5cc0cc5eab138a94a80b0978a15deee1,
+    type: 3}
+  healthCount: 3
+  moveSpeed: 0
+  attackSettings:
+    damageCount: 0
+    rangeAttackStartDistance: 0
+    melleAttackStartDistance: 0
+    projectilesCount: 0
+    timeBetweenAttacks: 0
+    damagePerSecond: 0
