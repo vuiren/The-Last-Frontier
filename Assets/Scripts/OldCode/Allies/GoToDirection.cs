@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 public class GoToDirection : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GoToDirection : MonoBehaviour
 		StartMoving(pos);
 	}
 
+	[Button]
 	private void StartMoving(Vector3 pos)
 	{
 		var randomOffset = Random.Range(-0.1f, 0.1f);

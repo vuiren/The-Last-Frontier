@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.InputSystem.InputAction;
 
 public class AllySpawnerController : MonoBehaviour
 {
@@ -101,36 +100,34 @@ public class AllySpawnerController : MonoBehaviour
 		PayResourcesForCreation();
 	}
 
-	public void ChangeIndex(CallbackContext callBackContext)
+	/*public void ChangeIndex()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callBackContext.performed) return;
-		var yDelta = callBackContext.ReadValue<Vector2>().y;
+		//var yDelta = callBackContext.ReadValue<Vector2>().y;
 		UpdateBuildingIndex(yDelta);
 		ShowBuilding();
-	}
+	}*/
 
 	public void SetCasarmController(CasarmController casarmController)
 	{
 		this.casarm = casarmController;
 	}
 
-	public void ChangeIndexInput(CallbackContext callBackContext)
+/*	public void ChangeIndexInput()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callBackContext.performed) return;
 		var yDelta = callBackContext.ReadValue<Vector2>().y;
 		UpdateBuildingIndex(yDelta);
 		ShowBuilding();
 	}
 
-	public void SetNextBuilding(CallbackContext callbackContext)
+	public void SetNextBuilding()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 		SetNextBuildingIndex();
 		ShowBuilding();
-	}
+	}*/
+
 	public void SetNextBuilding()
 	{
 		if (!gameObject.activeSelf) return;
@@ -138,10 +135,9 @@ public class AllySpawnerController : MonoBehaviour
 		ShowBuilding();
 	}
 
-	public void SetPreviousBuilding(CallbackContext callbackContext)
+	public void SetPreviousBuilding()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 		SetPreviousBuildingIndex();
 		ShowBuilding();
 	}

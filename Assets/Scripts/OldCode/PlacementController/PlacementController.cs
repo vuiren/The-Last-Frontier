@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.InputSystem.InputAction;
 
 public class PlacementController : MonoBehaviour
 {
@@ -131,9 +130,8 @@ public class PlacementController : MonoBehaviour
 	#endregion
 
 	#region Public Methods
-	public void PlaceBuilingInput(CallbackContext callbackContext)
+	/*public void PlaceBuilingInput()
 	{
-		if (!callbackContext.performed) return;
 		if (!gameObject.activeSelf) return;
 		var pointerOverUI = EventSystem.current.IsPointerOverGameObject();
 		if (pointerOverUI) return;
@@ -141,7 +139,7 @@ public class PlacementController : MonoBehaviour
 		if (!canBuild) return;
 		Instantiate(building.CreationPrefab, buildingPreview.transform.position, buildingPreview.transform.rotation);
 		PayResourcesForCreation(building);
-	}
+	}*/
 
 	public void PlaceBuilingInput()
 	{
@@ -179,43 +177,40 @@ public class PlacementController : MonoBehaviour
 			CalculateAutomaticOffSet();
 	}
 
-	public void RotateBuildingInput(CallbackContext callbackContext)
+/*	public void RotateBuildingInput()
 	{
 		if (!callbackContext.performed) return;
 		if (!gameObject.activeSelf) return;
 		if (!buildingPreview) return;
 		buildingPreview.transform.Rotate(0, 180, 0);
-	}
+	}*/
 
-	public void ChangeIndexInput(CallbackContext callBackContext)
+	/*public void ChangeIndexInput()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callBackContext.performed) return;
 		var yDelta = callBackContext.ReadValue<Vector2>().y;
 		UpdateBuildingIndex(yDelta);
 		ShowBuilding();
 		if (automaticlyMoveBoundToSpriteCenter)
 			CalculateAutomaticOffSet();
-	}
+	}*/
 
-	public void SetNextBuilding(CallbackContext callbackContext)
+	/*public void SetNextBuilding()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 		SetNextBuildingIndex();
 		ShowBuilding();
 		if (automaticlyMoveBoundToSpriteCenter)
 			CalculateAutomaticOffSet();
 	}
 
-	public void SetPreviousBuilding(CallbackContext callbackContext)
+	public void SetPreviousBuilding()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 		SetPreviousBuildingIndex();
 		ShowBuilding();
 		if (automaticlyMoveBoundToSpriteCenter)
 			CalculateAutomaticOffSet();
-	}
+	}*/
 	#endregion
 }

@@ -3,8 +3,6 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 
 public class OnEmptyPlaceClicked : MonoBehaviour
 {
@@ -44,9 +42,8 @@ public class OnEmptyPlaceClicked : MonoBehaviour
 			CallEvent();
 	}
 
-	public void CheckMousePos(CallbackContext callbackContext)
+/*	public void CheckMousePos()
 	{
-		if (!callbackContext.performed) return;
 		if (!gameObject.activeSelf) return;
 		bool v = EventSystem.current.IsPointerOverGameObject();
 		if (v) return;
@@ -56,7 +53,7 @@ public class OnEmptyPlaceClicked : MonoBehaviour
 		var hit = Physics2D.Raycast(ray.origin, ray.direction, 100, ignoreLayers);
 		if (!hit)
 			CallEvent();
-	}
+	}*/
 
 	private void CallEvent()
 	{

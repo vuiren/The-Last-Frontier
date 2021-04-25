@@ -48,6 +48,5 @@ public class NPCInfoHolder : MonoBehaviour
 			i++;
 			e.SetNPCInfoHandler(this);
 		}
-		Debug.Log(i + " NPCInfoReaders was set");
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
 public class CameraController : MonoBehaviour
 {
@@ -35,13 +34,13 @@ public class CameraController : MonoBehaviour
 
 
 
-	public void TakeInput(CallbackContext callbackContext)
+	public void TakeInput()
 	{
-        if(callbackContext.performed)
+      /*  if(callbackContext.performed)
 		{
             inputVector = callbackContext.ReadValue<Vector2>();
 		}
         if (callbackContext.canceled)
-            inputVector = new Vector2();
+            inputVector = new Vector2();*/
 	}
 }

@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 
 public class SelectAlliesInCircle : MonoBehaviour
 {
@@ -92,14 +90,13 @@ public class SelectAlliesInCircle : MonoBehaviour
 	#region Public Methods
 
 	#region Input
-	public void SelectAlliesInput(CallbackContext callbackContext)
+	/*public void SelectAlliesInput()
 	{
-		if (!callbackContext.performed) return;
 		if (!gameObject.activeSelf) return;
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 		DeselectSelectedAllies();
 		FindAndSelectAllies();
-	}
+	}*/
 
 	public void SelectAlliesInput()
 	{
@@ -115,12 +112,11 @@ public class SelectAlliesInCircle : MonoBehaviour
 		SendCommandToAllies(screenMousePos);
 	}
 
-	public void SendCommandInput(CallbackContext callbackContext)
+	/*public void SendCommandInput()
 	{
-		if (!callbackContext.performed) return;
 		Vector3 screenMousePos = GetMousePositionOnScreen();
 		SendCommandToAllies(screenMousePos);
-	}
+	}*/
 
 	public void ChangeSelectionRadius()
 	{
@@ -132,19 +128,17 @@ public class SelectAlliesInCircle : MonoBehaviour
 	}
 
 
-	public void ChangeSelectionRadius(CallbackContext callbackContext)
+/*	public void ChangeSelectionRadius()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 		var mouseScroll = callbackContext.ReadValue<Vector2>();
 		SetSelectionRadius(mouseScroll);
 		ScaleSelectionCursor();
-	}
+	}*/
 
-	public void SetNextCommandInput(CallbackContext callbackContext)
+	public void SetNextCommandInput()
 	{
 		if (!gameObject.activeSelf) return;
-		if (!callbackContext.performed) return;
 
 		commandIndex++;
 		if (commandIndex >= commands.Length) commandIndex = 0;

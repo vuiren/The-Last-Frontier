@@ -1,7 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEngine.InputSystem.InputAction;
 
 public enum PauseAction { Pause, Resume}
 public class GameSpeedConroller : MonoBehaviour
@@ -54,16 +53,14 @@ public class GameSpeedConroller : MonoBehaviour
 		}
 	}
 
-	public void SpeedGame(CallbackContext callbackContext)
+	public void SpeedGame()
 	{
-		if (!callbackContext.performed) return;
 		Time.timeScale += 0.5f;
 		Time.timeScale = Mathf.Clamp(Time.timeScale, 0, 2f);
 	}
 
-	public void SlowGame(CallbackContext callbackContext)
+	public void SlowGame()
 	{
-		if (!callbackContext.performed) return;
 		var timeScaleZero = Mathf.Approximately(Time.timeScale, 0f);
 		if(timeScaleZero)
 		{
