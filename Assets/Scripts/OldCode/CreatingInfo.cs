@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Creating Info", menuName = "Add Creating Info", order = 52)]
 public class CreatingInfo : ScriptableObject
@@ -9,7 +8,6 @@ public class CreatingInfo : ScriptableObject
 	[SerializeField] private GameObject creationPrefab;
 
 	[SerializeField]
-	[PreviewField(ObjectFieldAlignment.Left)]
 	private Sprite creationImage;
 
 	[SerializeField] private GameResources creationCost;

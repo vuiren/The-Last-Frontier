@@ -1,10 +1,7 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DamageTarget : MonoBehaviour
 {
-	[ReadOnly]
-	[ShowInInspector]
 	IHealthController damageableTarget;
 
 	public void DoDamageTarget(GameObject target, int damageCount)

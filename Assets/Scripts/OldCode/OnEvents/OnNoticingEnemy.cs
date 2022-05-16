@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class OnNoticingEnemy : MonoBehaviour
@@ -10,7 +9,6 @@ public class OnNoticingEnemy : MonoBehaviour
 	[SerializeField]
 	UnityEvent onLosingEnemy;
 
-	[ReadOnly]
 	[SerializeField]
 	GameObject previousEnemy;
 

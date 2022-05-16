@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
@@ -11,16 +10,15 @@ public class ZombieSpawner : MonoBehaviour
 	[SerializeField] 
 	int maxAlliesSpawned;
 
-	[ReadOnly] [SerializeField] List<Transform> spawnPoints = new List<Transform>();
-	[ReadOnly] [SerializeField] GameObject[] spawnedZombies;
+	[SerializeField] List<Transform> spawnPoints = new List<Transform>();
+	 [SerializeField] GameObject[] spawnedZombies;
 
 	private void Start()
 	{
 		spawnedZombies = new GameObject[maxAlliesSpawned];
 		FetchSpawnPoint();
 	}
-
-	[Button]
+	
 	private void FetchSpawnPoint()
 	{
 		for (int i = 0; i < spawnPointsParent.childCount; i++)

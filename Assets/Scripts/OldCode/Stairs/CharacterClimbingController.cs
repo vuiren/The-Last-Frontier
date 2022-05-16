@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 struct RaycastOrigins
 {
@@ -10,7 +9,7 @@ struct RaycastOrigins
 public enum MovingsEnum { Standing, GoingLeft, GoingRight}
 public class CharacterClimbingController : MonoBehaviour, INPCInfoReader
 {
-	[SerializeField] [ReadOnly]
+	[SerializeField]
 	NPCInfoHolder NPCInfoHolder;
 
 	[SerializeField]
@@ -43,7 +42,6 @@ public class CharacterClimbingController : MonoBehaviour, INPCInfoReader
 		SetRaycastOrigins();
 	}
 
-	[Button]
 	private void SetRaycastOrigins()
 	{
 		Bounds bounds = collider.bounds;

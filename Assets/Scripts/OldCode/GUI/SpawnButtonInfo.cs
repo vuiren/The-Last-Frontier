@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SpawnButtonInfo : MonoBehaviour
@@ -16,7 +15,6 @@ public class SpawnButtonInfo : MonoBehaviour
 	[SerializeField]
 	Text allyMetalCost;
 
-	[ReadOnly]
 	[SerializeField]
 	public CreatingInfo allyInfo;
 

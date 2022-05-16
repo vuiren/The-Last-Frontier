@@ -1,16 +1,14 @@
-﻿using Sirenix.OdinInspector;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class AllySpawnerController : MonoBehaviour
 {
 	#region Serialized Private Fields
 	[SerializeField] List<CreatingInfo> allies;
 
-	[ReadOnly] [SerializeField] CreatingInfo ally;
-	[ReadOnly] [SerializeField] CasarmController casarm;
-	[ReadOnly] [SerializeField] int allyIndex;
+	[SerializeField] CreatingInfo ally;
+	[SerializeField] CasarmController casarm;
+	[SerializeField] int allyIndex;
 
 	[SerializeField] BoolUnityEvent onCanCreateChanged;
 	[SerializeField] CreatingInfoUnityEvent onChoosedAllyChanged;

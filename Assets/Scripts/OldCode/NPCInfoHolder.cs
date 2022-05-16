@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class NPCInfoHolder : MonoBehaviour
@@ -7,9 +6,9 @@ public class NPCInfoHolder : MonoBehaviour
 	[SerializeField] private NPCInfo npcInfo;
 	[SerializeField] private CreatingInfo creatingInfo;
 	[SerializeField] Rigidbody2D rb;
-	[SerializeField] [ReadOnly] private MovingsEnum movingDirection;
-	[SerializeField] [ReadOnly] private Vector3 destinationPoint;
-	[ReadOnly] [SerializeField] private GameObject attackTarget;
+	[SerializeField]  private MovingsEnum movingDirection;
+	[SerializeField]  private Vector3 destinationPoint;
+	 [SerializeField] private GameObject attackTarget;
 
 	[SerializeField] UnityEvent onCreation;
 
@@ -38,7 +37,6 @@ public class NPCInfoHolder : MonoBehaviour
 		attackTarget = null;
 	}
 
-	[Button]
 	private void FindAndSetAllNPCInfoReaders()
 	{
 		int i = 0;

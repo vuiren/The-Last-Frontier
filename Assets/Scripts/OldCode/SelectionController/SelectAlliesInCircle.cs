@@ -1,6 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -35,15 +33,12 @@ public class SelectAlliesInCircle : MonoBehaviour
 	[SerializeField] 
 	GameObject selectionCursor;
 
-	[ReadOnly]
 	[SerializeField]
 	Vector3 targetSelectionCursorScale = new Vector3(1, 1, 1);
 
-	[ReadOnly]
 	[SerializeField]
 	float selectionRadius;
 
-	[ReadOnly]
 	[SerializeField] 
 	List<GameObject> allies = new List<GameObject>();
 	#endregion

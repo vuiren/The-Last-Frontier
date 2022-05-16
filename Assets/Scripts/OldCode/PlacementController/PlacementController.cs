@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,8 +14,7 @@ public class PlacementController : MonoBehaviour
 	[SerializeField] Vector3 boundsOffSet;
 	[SerializeField] bool prohibitBuildingOnCurvePosition;
 	[SerializeField] bool automaticlyMoveBoundToSpriteCenter = true;
-
-	[ReadOnly] [SerializeField] CreatingInfo building;
+	[SerializeField] CreatingInfo building;
 	[SerializeField] BoolUnityEvent onCanBuildChanged;
 	[SerializeField] GameResourcesUnityEvent onBuildingChanged;
 	#endregion

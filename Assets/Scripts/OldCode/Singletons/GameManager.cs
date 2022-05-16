@@ -20,12 +20,7 @@ public class GameManager : Singleton<GameManager>
 	}
 
 	private bool isGameOnPause = false;
-
-	//public GameResources GameResources { get; set; } = new GameResources(10, 10);
-
-	//public int MetalCount { get => GameResources.MetalCount; set => GameResources.MetalCount = value; }
-//	public int AvailableFoodAmount { get => GameResources.FoodCount; set => GameResources.FoodCount = value; }
-
+	
 	public int ConsumingFoodCount { get; set; } = 0;
 
 	public bool IsGameOnPause

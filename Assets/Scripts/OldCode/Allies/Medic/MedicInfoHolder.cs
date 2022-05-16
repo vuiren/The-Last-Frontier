@@ -1,9 +1,7 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MedicInfoHolder : MonoBehaviour
 {
-	[ReadOnly]
 	[SerializeField]
 	private GameObject healTarget;
 

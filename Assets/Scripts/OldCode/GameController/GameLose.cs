@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-public class GameLose : SingletonSubscriber
+﻿public class GameLose : SingletonSubscriber
 {
 	bool changingScene;
 

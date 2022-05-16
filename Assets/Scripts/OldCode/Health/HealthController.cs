@@ -1,13 +1,11 @@
-﻿using Sirenix.OdinInspector;
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class HealthCrontroller : MonoBehaviour, IHealthController, INPCInfoReader
 {
-	[SerializeField] [ReadOnly] protected NPCInfoHolder NPCInfoHolder;
-
-	[ReadOnly] [SerializeField] protected int healthCount;
+	[SerializeField] protected NPCInfoHolder NPCInfoHolder;
+	[SerializeField] protected int healthCount;
 
 	[Header("UI")]
 
@@ -67,10 +65,7 @@ public abstract class HealthCrontroller : MonoBehaviour, IHealthController, INPC
 		onHealthChanged?.Invoke(healthCount);
 	}
 
-	[Button]
-#pragma warning disable IDE0051 // Удалите неиспользуемые закрытые члены
     private void DamageSelf()
-#pragma warning restore IDE0051 // Удалите неиспользуемые закрытые члены
     {
 		TakeDamage(1);
 	}

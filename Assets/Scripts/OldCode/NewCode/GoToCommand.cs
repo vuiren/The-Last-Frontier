@@ -1,6 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GoToCommand : MonoBehaviour
 {
@@ -13,8 +11,6 @@ public class GoToCommand : MonoBehaviour
 	[SerializeField]
 	float commandStopDistance = 0.02f;
 
-	[ShowInInspector]
-	[ReadOnly]
 	protected DirectionsEnum movingDirection;
 
 	//[SerializeField]

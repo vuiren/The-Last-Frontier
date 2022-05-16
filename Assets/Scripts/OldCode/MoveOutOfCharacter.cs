@@ -1,14 +1,13 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveOutOfCharacter : MonoBehaviour, INPCInfoReader
 {
-	[SerializeField] [ReadOnly]
+	[SerializeField] 
 	NPCInfoHolder npcInfoHolder;
 
 	NPCInfo allyInfo;
 	Rigidbody2D rb;
-	[SerializeField] [ReadOnly] GameObject ally;
+	[SerializeField]  GameObject ally;
 
 	[SerializeField] Vector2 moveOutMovingDirection = new Vector2(1,0);
 	public bool MovingOut { get; set; }

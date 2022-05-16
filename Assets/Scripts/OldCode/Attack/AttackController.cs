@@ -1,12 +1,11 @@
-﻿using Sirenix.OdinInspector;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Attack
 {
     public abstract class AttackController : MonoBehaviour, INPCInfoReader
 	{
-		[SerializeField] [ReadOnly] protected NPCInfoHolder NPCInfoHolder;
+		[SerializeField] protected NPCInfoHolder NPCInfoHolder;
 
 		[SerializeField] AudioSource audioSource;
 		protected Action onAttack;

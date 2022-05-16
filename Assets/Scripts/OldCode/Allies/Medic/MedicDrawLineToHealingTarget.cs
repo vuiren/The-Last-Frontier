@@ -1,6 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MedicDrawLineToHealingTarget : MonoBehaviour
 {
@@ -44,7 +42,6 @@ public class MedicDrawLineToHealingTarget : MonoBehaviour
 		return health.HealingRequired();
 	}
 
-	[Button]
 	private void DrawLineToTarget(GameObject obj)
 	{
 		var objPos = obj.transform.position;

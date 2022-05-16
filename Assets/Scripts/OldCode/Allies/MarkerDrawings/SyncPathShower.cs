@@ -1,10 +1,8 @@
-﻿using Sirenix.OdinInspector;
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SyncPathShower : MonoBehaviour, INPCInfoReader
 {
-	[SerializeField] [ReadOnly] NPCInfoHolder NPCInfoHolder;
+	[SerializeField] NPCInfoHolder NPCInfoHolder;
 	[SerializeField] Vector2 finishPointOffset;
 	[SerializeField] LineRenderer pathLine;
 

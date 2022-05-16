@@ -1,6 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,7 +39,6 @@ public class BridgeHoldingController : MonoBehaviour
 		return true;
 	}
 
-	[Button]
 	private void LookForBridgeParts()
 	{
 		connectedBridges = new List<BridgeHoldingController>();

@@ -1,77 +1,49 @@
-﻿using Sirenix.OdinInspector;
-using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Extensions;
 using UnityEngine;
 
-namespace Assets.Scripts.TargetSearchers
+namespace OldCode.TargetSearchers
 {
-	public abstract class TargetSearcher : MonoBehaviour, INPCInfoReader
-	{
-		[SerializeField] [ReadOnly] private NPCInfoHolder NPCInfoHolder;
-		[SerializeField] private bool showSearchRadius;
-		[SerializeField] private float updateTime = 0.5f;
-		[SerializeField] private LayerMask searchingLayers;
-		[ShowInInspector] [ReadOnly] GameObject closestTarget;
-		[SerializeField] private GameObjectUnityEvent onClosestTargetUpdate;
+    [Serializable]
+    public class TargetSearcher
+    {
+        private readonly float _searchRadius;
+        private readonly LayerMask _searchingLayers; 
+        private readonly Collider2D[] _results;
+        
+        public TargetSearcher(float searchRadius, LayerMask searchingLayers)
+        {
+            _searchRadius = searchRadius;
+            _searchingLayers = searchingLayers;
+            _results = new Collider2D[10];
+        }
 
-		protected virtual float SearchRadius { get => NPCInfoHolder.NPCInfo.AttackSettings.EnemyNoticeDistance; }
+        public GameObject GetClosestTarget(Vector2 startPoint)
+        {
+            var size =Physics2D.OverlapCircleNonAlloc(startPoint, _searchRadius, _results, _searchingLayers);
+            return size > 0
+                ? GetClosestOfTargets(_results, startPoint)
+                : null;
+        }
 
+        private GameObject GetClosestOfTargets(IEnumerable<Collider2D> targets, Vector2 start)
+        {
+            GameObject bestTarget = null;
+            var closestDistanceSqr = Mathf.Infinity;
+            foreach (var potentialTarget in targets)
+            {
+                if(!potentialTarget) continue;
+                //if (!ShouldInclude(potentialTarget.gameObject)) continue
+                var directionToTarget = potentialTarget.transform.position - start.Vector3();
+                var dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (!(dSqrToTarget < closestDistanceSqr)) continue;
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget.gameObject;
+            }
 
-		protected void Start()
-		{
-			StartCoroutine(SearchingRoutine());
-		}
-
-		private IEnumerator SearchingRoutine()
-		{
-			while (true)
-			{
-				closestTarget = GetClosestTarget();
-				onClosestTargetUpdate.Invoke(closestTarget);
-				yield return new WaitForSeconds(updateTime);
-			}
-		}
-
-		private GameObject GetClosestTarget()
-		{
-			var pt = Physics2D.OverlapCircleAll(transform.position, SearchRadius, searchingLayers);
-			if (pt.Length > 0)
-			{
-				return GetClosestOfTargets(pt, transform);
-			}
-			return null;
-		}
-
-		private GameObject GetClosestOfTargets(Collider2D[] targets, Transform fromThis)
-		{
-			GameObject bestTarget = null;
-			float closestDistanceSqr = Mathf.Infinity;
-			Vector3 currentPosition = fromThis.position;
-			foreach (var potentialTarget in targets)
-			{
-				if (!ShouldInclude(potentialTarget.gameObject)) continue;
-
-				Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
-				float dSqrToTarget = directionToTarget.sqrMagnitude;
-				if (dSqrToTarget < closestDistanceSqr)
-				{
-					closestDistanceSqr = dSqrToTarget;
-					bestTarget = potentialTarget.gameObject;
-				}
-			}
-			return bestTarget;
-		}
-
-		protected abstract bool ShouldInclude(GameObject gameObject);
-
-		private void OnDrawGizmosSelected()
-		{
-			if (!showSearchRadius) return;
-			Gizmos.DrawWireSphere(transform.position, SearchRadius);
-		}
-
-		public void SetNPCInfoHandler(NPCInfoHolder NPCInfoHolder)
-		{
-			this.NPCInfoHolder = NPCInfoHolder;
-		}
-	}
+            return bestTarget;
+        }
+    }
 }

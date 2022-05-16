@@ -21,9 +21,8 @@ MonoBehaviour:
     timeBetweenAttacks: 1
     enemyNoticeDistance: 1
     attackSound: {fileID: 8300000, guid: 376312b086bf15c4c99d68ffd7fe22e3, type: 3}
+    attackStartDistance: 1
     attackType: 0
-    melleAttackStartDistance: 1
-    rangeAttackStartDistance: 1
     projectilePrefab: {fileID: 0}
     projectilesCount: 1
     damagePerSecond: 1

@@ -1,12 +1,10 @@
-﻿using Sirenix.OdinInspector;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class OnEmptyPlaceClicked : MonoBehaviour
-{
-	[ReadOnly] [SerializeField] Camera mainCamera;
+{ 
+	[SerializeField] Camera mainCamera;
 	[SerializeField] LayerMask ignoreLayers;
 
 	[SerializeField] UnityEvent onEmptyPlaceClick;

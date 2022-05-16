@@ -1,14 +1,12 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class OnClick : MonoBehaviour
 {
 	[SerializeField] UnityEvent onClick;
 	[SerializeField] UnityEvent onClickOutside;
 	[SerializeField] Collider2D clickCollider;
-	[SerializeField] [ReadOnly] Camera mainCamera;
+	[SerializeField] Camera mainCamera;
 
 	private void Start()
 	{
