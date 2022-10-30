@@ -16,9 +16,9 @@ public class FlagGameWinning : MonoBehaviour
 
 	private void WinGame()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 
 		instance.OnGameWinning?.Invoke();
-		onWinningTrigger.Invoke();
+		onWinningTrigger.Invoke();*/
 	}
 }

@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using Base;
+using UnityEngine;
 
-public class TrackMovingDirection : MonoBehaviour, INPCInfoReader
+public class TrackMovingDirection : ActorComponent
 {
 	[SerializeField] NPCInfoHolder NPCInfoHolder;
 	[SerializeField] float delta = 0.05f;
 
-	public void SetNPCInfoHandler(NPCInfoHolder NPCInfoHolder)
+	private void Start()
 	{
-		this.NPCInfoHolder = NPCInfoHolder;
+		NPCInfoHolder = _actor.GetComponentInChildren<NPCInfoHolder>();
 	}
 
 	private void Update()

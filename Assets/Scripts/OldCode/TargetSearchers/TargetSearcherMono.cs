@@ -1,20 +1,30 @@
 ﻿using System.Collections;
+using Base;
+using Services;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 namespace Assets.Scripts.TargetSearchers
 {
-	public abstract class TargetSearcherMono : MonoBehaviour, INPCInfoReader
+	public abstract class TargetSearcherMono : ActorComponent
 	{
-		[SerializeField] private NPCInfoHolder npcInfoHolder;
-		[SerializeField] private bool showSearchRadius;
+		/*[SerializeField] private bool showSearchRadius;
 		[SerializeField] private float updateTime = 0.5f;
 		[SerializeField] private LayerMask searchingLayers;
 		private GameObject _closestTarget;
 		[SerializeField] private GameObjectUnityEvent onClosestTargetUpdate;
+		
+		private NPCInfoHolder npcInfoHolder;
 
 		private float SearchRadius => npcInfoHolder.NPCInfo.AttackSettings.EnemyNoticeDistance;
 
+		[Inject]
+		public void Construct(IActorsService actorsService)
+		{
+			var actor = actorsService.GetActor(_actor.id);
+			npcInfoHolder = actor.GetComponentInChildren<NPCInfoHolder>();
+		}
 
 		protected void Start()
 		{
@@ -65,11 +75,6 @@ namespace Assets.Scripts.TargetSearchers
 		{
 			if (!showSearchRadius) return;
 			Gizmos.DrawWireSphere(transform.position, SearchRadius);
-		}
-
-		public void SetNPCInfoHandler(NPCInfoHolder NPCInfoHolder)
-		{
-			this.npcInfoHolder = NPCInfoHolder;
-		}
+		}*/
 	}
 }

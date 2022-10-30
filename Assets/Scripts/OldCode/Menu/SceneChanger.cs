@@ -8,10 +8,10 @@ public class SceneChanger : MonoBehaviour
 
 	public void ChangeScene()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 
 		instance.OnSceneChanging?.Invoke();
 		instance.ResetVariables();
-		SceneManager.LoadScene(sceneName);
+		SceneManager.LoadScene(sceneName);*/
 	}
 }

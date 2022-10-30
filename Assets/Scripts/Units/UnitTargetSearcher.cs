@@ -60,13 +60,13 @@ namespace Units
         private void RelaxUnit()
         {
             var unitsController = FindObjectOfType<UnitsController>();
-            unitsController.RelaxUnit(unit.ID);
+           // unitsController.RelaxUnit(unit.ID);
         }
 
         private void AlertUnit()
         {
            var unitsController = FindObjectOfType<UnitsController>();
-           unitsController.AlertUnit(unit.ID);
+        //   unitsController.AlertUnit(unit.ID);
         }
 
         private void OnDrawGizmosSelected()

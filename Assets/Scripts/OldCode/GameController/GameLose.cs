@@ -4,19 +4,19 @@
 
 	internal override void SubscribeToEvents()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 
 //		instance.OnCasarmsCountChanged += UpdateList;
-		instance.OnSceneChanging += UpdateBool;
+		instance.OnSceneChanging += UpdateBool;*/
 	}
 
 	internal override void UnSubscribeFromEvents()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 		if (!instance) return;
 	//	instance.OnAlliesCountChanged -= UpdateList;
 	//	instance.OnCasarmsCountChanged -= UpdateList;
-		instance.OnSceneChanging -= UpdateBool;
+		instance.OnSceneChanging -= UpdateBool;*/
 	}
 
 	private void UpdateBool()
@@ -26,12 +26,12 @@
 
 	private void UpdateList()
 	{
-		if (changingScene) return;
+		/*if (changingScene) return;
 		var instance = GameManager.Instance;
 
 	/*	if (instance.Allies.Count == 0 && instance.Casarms.Count <= 0) 
 		{
 			instance.OnGameOver?.Invoke();
-		}*/
+		}#1#*/
 	}
 }

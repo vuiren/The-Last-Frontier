@@ -6,13 +6,13 @@ public class AllyInfoHolder : MonoBehaviour
 
 	private void Awake()
 	{
-		var instance = GameManager.Instance;
-		instance.ConsumingFoodCount += allyInfo.CreationCost.FoodCount;
+		/*var instance = GameManager.Instance;
+		instance.ConsumingFoodCount += allyInfo.CreationCost.FoodCount;*/
 	}
 
 	private void OnDestroy()
 	{
-		var instance = GameManager.Instance;
-		instance.ConsumingFoodCount -= allyInfo.CreationCost.FoodCount;
+		/*var instance = GameManager.Instance;
+		instance.ConsumingFoodCount -= allyInfo.CreationCost.FoodCount;*/
 	}
 }

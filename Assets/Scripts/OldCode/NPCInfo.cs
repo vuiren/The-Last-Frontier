@@ -1,24 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+public enum UnitType
+{
+    Scout,
+    Soldier,
+}
+
+[Serializable]
+public class UnitNpcInfo
+{
+    public UnitType UnitType;
+    public NPCInfo NpcInfo;
+}
 
 [CreateAssetMenu(fileName = "New NPC", menuName = "NPC/Create New NPC", order = 54)]
 public class NPCInfo : ScriptableObject
 {
-	[SerializeField] private Sprite npcImage;
+    public UnitType UnitType;
+    
+    public Sprite NpcImage;
 
-	[SerializeField] private int healthCount = 3;
+    public int HealthCount = 3;
 
-	[SerializeField] private float moveSpeed = 1;
+    public float MoveSpeed = 1;
 
-	[SerializeField] AttackSettings attackSettings;
+    public AttackSettings AttackSettings;
 
-	[SerializeField] private GameObject destroyedPrefab;
+    public GameObject DestroyedPrefab;
 
-	public float MoveSpeed { get => moveSpeed; }
-	public int HealthCount { get => healthCount; }
-	public float TimeBetweenAttacks { get => attackSettings.TimeBetweenAttacks; }
-	public Sprite NPCImage { get => npcImage; }
-	public int DamageCount { get => attackSettings.DamageCount; }
-	public AudioClip AttackSound { get => attackSettings.AttackSound; }
-	public GameObject DestroyedPrefab { get => destroyedPrefab; }
-	public AttackSettings AttackSettings => attackSettings;
+    public float TimeBetweenAttacks
+    {
+        get => AttackSettings.TimeBetweenAttacks;
+    }
+
+    public int DamageCount
+    {
+        get => AttackSettings.DamageCount;
+    }
+
+    public AudioClip AttackSound
+    {
+        get => AttackSettings.AttackSound;
+    }
 }

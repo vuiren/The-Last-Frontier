@@ -35,7 +35,7 @@ public class BuildUISetup : MonoBehaviour
 
 	private void DoChangeBuilding(BuildingCreatingInfo creatingInfo)
 	{
-		var instance = GameManager.Instance;
-		instance.onBuildingCreation?.Invoke(creatingInfo);
+		/*var instance = GameManager.Instance;
+		instance.onBuildingCreation?.Invoke(creatingInfo);*/
 	}
 }

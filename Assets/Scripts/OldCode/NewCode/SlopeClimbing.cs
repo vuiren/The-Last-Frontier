@@ -15,7 +15,7 @@ public class SlopeClimbing : MonoBehaviour
 
 	BoxCollider2D collider;
 	RaycastOrigins raycastOrigins;
-	public CollisionInfo collisions;
+	private CollisionInfo collisions;
 
 	void Start()
 	{

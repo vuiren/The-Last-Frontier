@@ -8,15 +8,15 @@ public class OnGameWin : SingletonSubscriber
 
 	internal override void SubscribeToEvents()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 
-		instance.OnGameWinning += onGameWinEvents.Invoke;
+		instance.OnGameWinning += onGameWinEvents.Invoke;*/
 	}
 
 	internal override void UnSubscribeFromEvents()
 	{
-		var instance = GameManager.Instance;
+		/*var instance = GameManager.Instance;
 		if (!instance) return;
-		instance.OnGameWinning -= onGameWinEvents.Invoke;
+		instance.OnGameWinning -= onGameWinEvents.Invoke;*/
 	}
 }
